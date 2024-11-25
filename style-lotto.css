@@ -13,12 +13,6 @@
   -o-border-radius: 50rem;
 }
 
-@media (max-width: 420px) {
-  nav.navbar a.navbar-brand {
-    width: 45% !important;
-  }
-}
-
 .custom-claim-btn:hover {
   background-color: #b30906;
   color: white;
@@ -213,7 +207,7 @@
   }
 
   .text-content h2 {
-    font-size: 3rem;
+    font-size: 2.3rem;
     margin-bottom: 1.5rem;
   }
 
@@ -229,7 +223,7 @@
   }
 
   .text-content h2 {
-    font-size: 3rem;
+    font-size: 2.3rem;
     margin-bottom: 1.25rem;
   }
 
@@ -266,14 +260,19 @@
   }
 
   .image-wrapper::before {
-    background: linear-gradient(to bottom, 
-      rgba(0,0,0,0.2),
-      rgba(0,0,0,0.7)
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.7)
     );
   }
 }
 
 @media (max-width: 767px) {
+  nav.navbar a.navbar-brand {
+    width: 45% !important;
+  }
+
   .hero-carousel {
     margin-top: 0px;
   }
@@ -399,391 +398,392 @@
 
 /* Base styles */
 .hero-carousel {
-    position: relative;
-    overflow: hidden;
-    background: #000;
-    width: 100%;
+  position: relative;
+  overflow: hidden;
+  background: #000;
+  width: 100%;
 }
 
 .carousel-container {
-    position: relative;
-    height: calc(100vh - 76px);
-    overflow: hidden;
+  position: relative;
+  height: calc(100vh - 76px);
+  overflow: hidden;
 }
 
 /* Content Layout */
 .carousel-content {
-    display: flex;
-    height: 100%;
-    position: relative;
+  display: flex;
+  height: 100%;
+  position: relative;
 }
 
 .image-wrapper {
-    flex: 0 0 70%;
-    position: relative;
-    overflow: hidden;
+  flex: 0 0 70%;
+  position: relative;
+  overflow: hidden;
 }
 
 .text-content {
-    flex: 0 0 30%;
-    background: linear-gradient(135deg, #000000, #1a1a1a);
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    text-align: left;
+  flex: 0 0 30%;
+  background: linear-gradient(135deg, #000000, #1a1a1a);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
 }
 
 /* Large Desktop (1200px and up) */
 @media (min-width: 1200px) {
-    .text-content {
-        padding: 4rem;
-    }
+  .text-content {
+    padding: 4rem;
+  }
 
-    .text-content h2 {
-        font-size: 3rem;
-        margin-bottom: 1.5rem;
-    }
+  .text-content h2 {
+    font-size: 2.3rem;
+    margin-bottom: 1.5rem;
+  }
 
-    .text-content h3 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-        color: #e30c07;
-        font-weight: 600;
-        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-        letter-spacing: 0.5px;
-    }
-
-    .text-content p {
-        font-size: 1.2rem;
-        line-height: 1.8;
-    }
-}
-
-/* Desktop (992px to 1199px) */
-@media (max-width: 1199px) {
-    .text-content {
-        padding: 3rem;
-    }
-
-    .text-content h2 {
-        font-size: 3rem;
-        margin-bottom: 1.25rem;
-    }
-
-    .text-content p {
-        font-size: 1.1rem;
-        line-height: 1.6;
-    }
-}
-
-/* Tablet Landscape (768px to 991px) */
-@media (max-width: 991px) {
-    .carousel-content {
-        flex-direction: column;
-    }
-
-    .image-wrapper {
-        flex: 0 0 55%;
-        height: 55%;
-    }
-
-    .text-content {
-        flex: 0 0 45%;
-        height: 45%;
-        padding: 2rem;
-    }
-
-    .text-content h2 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-    }
-
-    .text-content p {
-        font-size: 1rem;
-        line-height: 1.5;
-    }
-
-    .image-wrapper::before {
-        background: linear-gradient(to bottom, 
-            rgba(0,0,0,0.2),
-            rgba(0,0,0,0.7)
-        );
-    }
-}
-
-/* Tablet Portrait (576px to 767px) */
-@media (max-width: 767px) {
-    .hero-carousel {
-        margin-top: 0;
-    }
-
-    .carousel-container {
-        height: calc(100vh - 60px);
-    }
-
-    .image-wrapper {
-        flex: 0 0 50%;
-        height: 50%;
-    }
-
-    .text-content {
-        flex: 0 0 50%;
-        height: 50%;
-        padding: 1.5rem;
-    }
-
-    .text-content h2 {
-        font-size: 2rem;
-        margin-bottom: 0.75rem;
-    }
-
-    .text-content p {
-        font-size: 0.95rem;
-        line-height: 1.4;
-        margin-bottom: 1rem;
-    }
-}
-
-/* Mobile (575px and down) */
-@media (max-width: 575px) {
-    .carousel-content {
-        height: 100%;
-    }
-
-    .image-wrapper {
-        flex: 0 0 45%;
-        height: 45%;
-    }
-
-    .text-content {
-        flex: 0 0 55%;
-        height: 55%;
-        padding: 1.25rem;
-    }
-
-    .text-content h2 {
-        font-size: 2.5rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .text-content p {
-        font-size: 1.2rem;
-    }
-}
-
-/* Small Mobile (400px and down) */
-@media (max-width: 400px) {
-    .image-wrapper {
-        flex: 0 0 40%;
-        height: 40%;
-    }
-
-    .text-content {
-        flex: 0 0 60%;
-        height: 60%;
-        padding: 1rem;
-    }
-
-    .text-content h2 {
-        font-size: 1.5rem;
-    }
-
-    .text-content p {
-        font-size: 0.9rem;
-    }
-}
-
-/* Landscape Mode */
-@media (max-height: 600px) and (orientation: landscape) {
-    .carousel-content {
-        flex-direction: row;
-    }
-
-    .image-wrapper {
-        flex: 0 0 65%;
-        height: 100%;
-    }
-
-    .text-content {
-        flex: 0 0 35%;
-        height: 100%;
-        padding: 1.5rem;
-    }
-
-    .text-content h2 {
-        font-size: 1.75rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .text-content p {
-        font-size: 0.9rem;
-        margin-bottom: 0.5rem;
-    }
-}
-
-/* Image Styles */
-.image-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Ensure images don't overflow */
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Animation Classes */
-.carousel-slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
-}
-
-.carousel-slide.active {
-    opacity: 1;
-    visibility: visible;
-    z-index: 1;
-}
-
-/* Fix for iOS Safari height issues */
-@supports (-webkit-touch-callout: none) {
-    .carousel-container {
-        height: -webkit-fill-available;
-    }
-}
-
-/* Fix for notched phones */
-@supports (padding: max(0px)) {
-    .carousel-container {
-        padding-left: env(safe-area-inset-left);
-        padding-right: env(safe-area-inset-right);
-    }
-}
-
-.text-content h3 {
-    font-size: 1.8rem;
+  .text-content h3 {
+    font-size: 2rem;
     margin-bottom: 1rem;
     color: #e30c07;
     font-weight: 600;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
     letter-spacing: 0.5px;
+  }
+
+  .text-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+  }
+}
+
+/* Desktop (992px to 1199px) */
+@media (max-width: 1199px) {
+  .text-content {
+    padding: 3rem;
+  }
+
+  .text-content h2 {
+    font-size: 2.3rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .text-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+}
+
+/* Tablet Landscape (768px to 991px) */
+@media (max-width: 991px) {
+  .carousel-content {
+    flex-direction: column;
+  }
+
+  .image-wrapper {
+    flex: 0 0 55%;
+    height: 55%;
+  }
+
+  .text-content {
+    flex: 0 0 45%;
+    height: 45%;
+    padding: 2rem;
+  }
+
+  .text-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .text-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .image-wrapper::before {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.7)
+    );
+  }
+}
+
+/* Tablet Portrait (576px to 767px) */
+@media (max-width: 767px) {
+  .hero-carousel {
+    margin-top: 0;
+  }
+
+  .carousel-container {
+    height: calc(100vh - 60px);
+  }
+
+  .image-wrapper {
+    flex: 0 0 50%;
+    height: 50%;
+  }
+
+  .text-content {
+    flex: 0 0 50%;
+    height: 50%;
+    padding: 1.5rem;
+  }
+
+  .text-content h2 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .text-content p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Mobile (575px and down) */
+@media (max-width: 575px) {
+  .carousel-content {
+    height: 100%;
+  }
+
+  .image-wrapper {
+    flex: 0 0 45%;
+    height: 45%;
+  }
+
+  .text-content {
+    flex: 0 0 55%;
+    height: 55%;
+    padding: 1.25rem;
+  }
+
+  .text-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .text-content p {
+    font-size: 1.2rem;
+  }
+}
+
+/* Small Mobile (400px and down) */
+@media (max-width: 400px) {
+  .image-wrapper {
+    flex: 0 0 40%;
+    height: 40%;
+  }
+
+  .text-content {
+    flex: 0 0 60%;
+    height: 60%;
+    padding: 1rem;
+  }
+
+  .text-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .text-content p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Landscape Mode */
+@media (max-height: 600px) and (orientation: landscape) {
+  .carousel-content {
+    flex-direction: row;
+  }
+
+  .image-wrapper {
+    flex: 0 0 65%;
+    height: 100%;
+  }
+
+  .text-content {
+    flex: 0 0 35%;
+    height: 100%;
+    padding: 1.5rem;
+  }
+
+  .text-content h2 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .text-content p {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Image Styles */
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Ensure images don't overflow */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Animation Classes */
+.carousel-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+
+/* Fix for iOS Safari height issues */
+@supports (-webkit-touch-callout: none) {
+  .carousel-container {
+    height: -webkit-fill-available;
+  }
+}
+
+/* Fix for notched phones */
+@supports (padding: max(0px)) {
+  .carousel-container {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+.text-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #e30c07;
+  font-weight: 600;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.5px;
 }
 
 @media (max-width: 575px) {
-    .text-content {
-        padding: 1rem;
-    }
+  .text-content {
+    padding: 1rem;
+  }
 
-    .text-content h2 {
-        font-size: 1.8rem;
-    }
+  .text-content h2 {
+    font-size: 1.8rem;
+  }
 
-    .text-content h3 {
-        font-size: 1.5rem;
-    }
+  .text-content h3 {
+    font-size: 1.5rem;
+  }
 
-    .text-content p {
-        font-size: 0.9rem;
-    }
+  .text-content p {
+    font-size: 0.9rem;
+  }
 }
 
 /* Additional Media Queries for Very Small Screens */
 @media (max-width: 320px) {
-    .text-content {
-        padding: 0.5rem;
-    }
+  .text-content {
+    padding: 0.5rem;
+  }
 
-    .text-content h2 {
-        font-size: 1.5rem;
-    }
+  .text-content h2 {
+    font-size: 1.5rem;
+  }
 
-    .text-content h3 {
-        font-size: 1.3rem;
-    }
+  .text-content h3 {
+    font-size: 1.3rem;
+  }
 
-    .text-content p {
-        font-size: 0.8rem;
-    }
+  .text-content p {
+    font-size: 0.8rem;
+  }
 }
 
 .about-section {
-    background-color: #f4f4f4;
-    padding: 3rem 1.5rem;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #f4f4f4;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .about-section h1 {
-    font-size: 2.8rem;
-    color: #e30c07;
-    margin-bottom: 1rem;
-    font-weight: 700;
+  font-size: 2.8rem;
+  color: #e30c07;
+  margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 .about-section h2 {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 1.5rem;
-    font-weight: 600;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
 }
 
 .about-content {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
 }
 
 .about-content p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #555;
-    margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 1.5rem;
 }
 
 .video-container {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 
 .video-container h3 {
-    font-size: 1.8rem;
-    color: #333;
-    margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1rem;
 }
 
 iframe {
-    border: none;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 560px;
-    height: 315px;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 560px;
+  height: 315px;
 }
 
 @media (max-width: 576px) {
-    .about-section {
-        padding: 2rem 1rem;
-    }
+  .about-section {
+    padding: 2rem 1rem;
+  }
 
-    .about-section h1 {
-        font-size: 2.2rem;
-    }
+  .about-section h1 {
+    font-size: 2.2rem;
+  }
 
-    .about-section h2 {
-        font-size: 1.6rem;
-    }
+  .about-section h2 {
+    font-size: 1.6rem;
+  }
 
-    .about-content p {
-        font-size: 0.95rem;
-    }
+  .about-content p {
+    font-size: 0.95rem;
+  }
 
-    .video-container h3 {
-        font-size: 1.5rem;
-    }
+  .video-container h3 {
+    font-size: 1.5rem;
+  }
 }
