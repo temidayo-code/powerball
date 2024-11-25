@@ -830,3 +830,31 @@ img {
     padding: 1.5rem;
   }
 }
+
+/* SweetAlert Custom Styles */
+.custom-modal-class {
+    border-radius: 12px !important;
+    padding: 2rem !important;
+}
+
+.custom-title-class {
+    font-size: 1.5rem !important;
+    color: #dc3545 !important;
+}
+
+.custom-confirm-button {
+    padding: 0.8rem 2rem !important;
+    font-weight: 600 !important;
+    border-radius: 6px !important;
+}
+
+/* Make SweetAlert responsive */
+@media (max-width: 576px) {
+    .custom-modal-class {
+        padding: 1.5rem !important;
+    }
+    
+    .custom-title-class {
+        font-size: 1.25rem !important;
+    }
+}

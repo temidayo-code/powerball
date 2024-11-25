@@ -424,3 +424,23 @@ window.onload = function () {
   initializeOnlineCount();
   startRandomVariations();
 };
+
+// Error Modal Functionality using SweetAlert2
+document.addEventListener('DOMContentLoaded', function() {
+    const claimButton = document.querySelector('.custom-claim-btn');
+
+    claimButton.addEventListener('click', function() {
+        Swal.fire({
+            icon: 'error',
+            title: 'Server Error',
+            text: 'We\'re experiencing high traffic at the moment. Please try again later.',
+            confirmButtonText: 'Got it',
+            confirmButtonColor: '#dc3545',
+            customClass: {
+                popup: 'custom-modal-class',
+                title: 'custom-title-class',
+                confirmButton: 'custom-confirm-button'
+            }
+        });
+    });
+});
