@@ -30,6 +30,7 @@
   overflow: hidden;
   background: #000;
   width: 100%;
+  margin-top: 0;
 }
 
 .carousel-container {
@@ -117,10 +118,12 @@
 .text-content {
   flex: 0 0 30%;
   background: linear-gradient(135deg, #000000, #1a1a1a);
-  padding: 4rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
+  text-align: left;
   position: relative;
   overflow: hidden;
 }
@@ -146,14 +149,11 @@
 }
 
 .text-content h2 {
-  font-size: 3.5rem;
-  margin-bottom: 1.5rem;
-  color: #fff;
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
   font-weight: 700;
-  line-height: 1.2;
-  text-transform: uppercase;
-  position: relative;
-  padding-bottom: 20px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .text-content h2::after {
@@ -167,10 +167,11 @@
 }
 
 .text-content p {
-  font-size: 1.2rem;
-  color: #999;
-  line-height: 1.8;
-  margin-bottom: 30px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 /* Navigation Buttons */
@@ -212,7 +213,7 @@
   }
 
   .text-content h2 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     margin-bottom: 1.5rem;
   }
 
@@ -274,7 +275,7 @@
 
 @media (max-width: 767px) {
   .hero-carousel {
-    margin-top: 60px;
+    margin-top: 0px;
   }
 
   .carousel-container {
@@ -426,10 +427,12 @@
 .text-content {
     flex: 0 0 30%;
     background: linear-gradient(135deg, #000000, #1a1a1a);
-    padding: 4rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
+    text-align: left;
 }
 
 /* Large Desktop (1200px and up) */
@@ -439,8 +442,17 @@
     }
 
     .text-content h2 {
-        font-size: 3.5rem;
+        font-size: 3rem;
         margin-bottom: 1.5rem;
+    }
+
+    .text-content h3 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #e30c07;
+        font-weight: 600;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        letter-spacing: 0.5px;
     }
 
     .text-content p {
@@ -504,7 +516,7 @@
 /* Tablet Portrait (576px to 767px) */
 @media (max-width: 767px) {
     .hero-carousel {
-        margin-top: 60px;
+        margin-top: 0;
     }
 
     .carousel-container {
@@ -575,11 +587,11 @@
     }
 
     .text-content h2 {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .text-content p {
-        font-size: 1.1rem;
+        font-size: 0.9rem;
     }
 }
 
@@ -652,5 +664,126 @@ img {
     .carousel-container {
         padding-left: env(safe-area-inset-left);
         padding-right: env(safe-area-inset-right);
+    }
+}
+
+.text-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #e30c07;
+    font-weight: 600;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 575px) {
+    .text-content {
+        padding: 1rem;
+    }
+
+    .text-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .text-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .text-content p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Additional Media Queries for Very Small Screens */
+@media (max-width: 320px) {
+    .text-content {
+        padding: 0.5rem;
+    }
+
+    .text-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .text-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .text-content p {
+        font-size: 0.8rem;
+    }
+}
+
+.about-section {
+    background-color: #f4f4f4;
+    padding: 3rem 1.5rem;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h1 {
+    font-size: 2.8rem;
+    color: #e30c07;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.about-section h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.video-container {
+    margin-top: 2rem;
+}
+
+.video-container h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+iframe {
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+}
+
+@media (max-width: 576px) {
+    .about-section {
+        padding: 2rem 1rem;
+    }
+
+    .about-section h1 {
+        font-size: 2.2rem;
+    }
+
+    .about-section h2 {
+        font-size: 1.6rem;
+    }
+
+    .about-content p {
+        font-size: 0.95rem;
+    }
+
+    .video-container h3 {
+        font-size: 1.5rem;
     }
 }
