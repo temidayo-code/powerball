@@ -66,7 +66,6 @@ const messages = [
   "It’s not a dream, it’s real! I’ve received $500,000! ✨💰",
   "Don't worry, it's the real deal! $500,000 is now mine! 💵💯",
   "It’s for real! I just got $500,000! Thank you so much! 🙏💖",
-
   "I’m beyond excited to be part of such an incredible program.",
   "I’m so grateful to be selected for this life-changing giveaway!",
   "I’ll be forever grateful for your generosity. Thank you so much.",
