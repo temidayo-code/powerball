@@ -1072,3 +1072,196 @@ img {
   color: #dc3545;
   margin: 0 11px;
 }
+
+/* Form Section Styles */
+.form-section {
+    padding: 5rem 0;
+    background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+}
+
+.form-header {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.form-header h2 {
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.form-header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.form-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.prize-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.form-group-header i {
+    color: #dc3545;
+    font-size: 1.2rem;
+}
+
+.form-group-header h3 {
+    color: #1a1a1a;
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    color: #444;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #dc3545;
+}
+
+.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+}
+
+.form-submit {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.submit-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 1rem 3rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #c82333;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .form-section {
+        padding: 3rem 0;
+    }
+
+    .form-wrapper {
+        padding: 1.5rem;
+    }
+
+    .form-header h2 {
+        font-size: 2rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .form-wrapper {
+        padding: 1rem;
+    }
+
+    .form-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}
+
+/* SSN Field Styles */
+.form-group input[type="text"]#ssn {
+    letter-spacing: 1px;
+    font-family: monospace;
+}
+
+.form-text {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 0.25rem;
+}
+
+/* Style for select dropdowns with many options */
+.form-group select {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* Optional: Group styling for better readability */
+optgroup {
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+/* Hover effect for options */
+option:hover {
+    background-color: #f8f9fa;
+}
+
+/* Smooth Scroll Behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Optional: Add padding to account for fixed header */
+.form-section {
+    scroll-margin-top: 80px; /* Adjust this value based on your header height */
+}

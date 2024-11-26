@@ -87,7 +87,7 @@ const messages = [
   "You’ve given me hope when I thought all was lost.",
   "This is beyond anything I could’ve dreamed of. Thank you!",
   "This is an absolute game-changer for me. Thank you!",
-  "I can’t believe how generous you both are. Thank you for everything."
+  "I can’t believe how generous you both are. Thank you for everything.",
 ];
 
 const names = [
@@ -424,22 +424,29 @@ window.onload = function () {
   startRandomVariations();
 };
 
-// Error Modal Functionality using SweetAlert2
-document.addEventListener('DOMContentLoaded', function() {
-    const claimButton = document.querySelector('.custom-claim-btn');
+// Smooth scroll to form section
+// document.addEventListener('DOMContentLoaded', function() {
+//     const claimButton = document.querySelector('.custom-claim-btn');
 
-    claimButton.addEventListener('click', function() {
-        Swal.fire({
-            icon: 'error',
-            title: 'Server Error',
-            text: 'We\'re experiencing high traffic at the moment. Please try again later.',
-            confirmButtonText: 'Got it',
-            confirmButtonColor: '#dc3545',
-            customClass: {
-                popup: 'custom-modal-class',
-                title: 'custom-title-class',
-                confirmButton: 'custom-confirm-button'
-            }
-        });
-    });
-});
+//     claimButton.addEventListener('click', function(e) {
+//         e.preventDefault();
+
+//         // First show error message
+//         Swal.fire({
+//             icon: 'error',
+//             title: 'Server Error',
+//             text: 'We\'re experiencing high traffic at the moment. Please try again later.',
+//             confirmButtonText: 'Got it',
+//             confirmButtonColor: '#dc3545',
+//         }).then((result) => {
+//             if (result.isConfirmed) {
+//                 // After clicking "Got it", scroll to form
+//                 const formSection = document.getElementById('claimForm');
+//                 formSection.scrollIntoView({
+//                     behavior: 'smooth',
+//                     block: 'start'
+//                 });
+//             }
+//         });
+//     });
+// });
