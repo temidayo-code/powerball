@@ -482,7 +482,7 @@ document
 
     try {
       const response = await fetch(
-        `https://powerball-backend.vercel.app/api/submit-form`,
+        `${API_URL}/api/submit-form`,
         {
           method: "POST",
           headers: {
