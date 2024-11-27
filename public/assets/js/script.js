@@ -494,15 +494,15 @@ document
       }
 
       const data = await response.json();
-      // console.log("Server response:", data);
+      console.log("Server response:", data);
 
       if (data.success) {
         Swal.fire({
           icon: "success",
           title: "Success!",
-          text: "Your form has been submitted successfully.",
+          text: data.message,
+          confirmButtonColor: "#c81533",
         });
-
         document.getElementById("prizeClaimForm").reset();
       } else {
         throw new Error(data.message);
