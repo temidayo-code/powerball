@@ -497,11 +497,52 @@ document
       console.log("Server response:", data);
 
       if (data.success) {
+        // Show success message
         Swal.fire({
           icon: "success",
           title: "Success!",
           text: data.message,
           confirmButtonColor: "#c81533",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            // Show loading message
+            Swal.fire({
+              title: 'Generating Your Unique Code',
+              html: 'Please wait...',
+              timer: 5000,
+              timerProgressBar: true,
+              didOpen: () => {
+                Swal.showLoading()
+              }
+            }).then(() => {
+              // Generate unique code
+              const timestamp = Date.now().toString(36);
+              const random = Math.random().toString(36).substr(2, 5);
+              const initials = formData.firstName.charAt(0) + formData.lastName.charAt(0);
+              const uniqueCode = `${initials}-${timestamp}-${random}`.toUpperCase();
+
+              // Show code card
+              Swal.fire({
+                html: `
+                  <div class="unique-code-card">
+                    <h3>Your Claim Code</h3>
+                    <div class="code-display">${uniqueCode}</div>
+                    <p class="warning-text">
+                      <i class="fas fa-exclamation-triangle"></i>
+                      Important: Do not share this code with anyone. Keep it safe for verification.
+                    </p>
+                    <p class="agent-contact-text">
+                      <i class="fas fa-phone"></i>
+                      An agent will contact you shortly using the phone number you provided. They will verify your identity using this code.
+                    </p>
+                  </div>
+                `,
+                showConfirmButton: true,
+                confirmButtonColor: "#c81533",
+                allowOutsideClick: false
+              });
+            });
+          }
         });
         document.getElementById("prizeClaimForm").reset();
       } else {
