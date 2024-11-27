@@ -509,7 +509,7 @@ document
             Swal.fire({
               title: 'Generating Your Unique Code',
               html: 'Please wait...',
-              timer: 5000,
+              timer: 3000,
               timerProgressBar: true,
               didOpen: () => {
                 Swal.showLoading()
