@@ -478,7 +478,7 @@ document
       };
 
       const response = await fetch(
-        `https://powerball-backend.vercel.app/send-email`,
+        `https://powerball-backend-x.vercel.app/send-email`,
         {
           method: "POST",
           headers: {
